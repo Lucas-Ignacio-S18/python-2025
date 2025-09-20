@@ -66,11 +66,15 @@ print("sort strings: ", lista_strings)
 print("\n")
 ##----------------------------------COPY----------------------------------#
 print("-"*25, "COPY(Copiar lista)","-"*25 )
-#! Copiar lista
+
+#!Copiar lista
 #copy() -> devuelve una copia de la lista
 copiado_list = []
 print("copialo_list original: ", copiado_list)
-copiado_list = lista_strings.copy
+copiado_list = lista_strings.copy()
+print("copialo_list final: ", copiado_list)
+lista_strings[0] = "rinoceronte"
+print("copialo_list modificado: ", copiado_list)
 
 print("\n")
 ##----------------------------------SLICING----------------------------------#
@@ -83,8 +87,34 @@ print(numeros[:5]) # [3,4,5,6] -> Desde el inicio hasta 5
 print(numeros[::3]) # [3,4,5,6] -> de 3 en 3 [1,4,7]
 print(numeros[::-2]) # [9,7,5,3,1] -> Invertida, va restando 2 en 2
 
+print("\n")
+##--------------------------------- Otras operaciones funcionales ----------------------------------#
+print("-"*25, "operaciones funcionales","-"*25 )
 
-# print("-"*50)
-# palabras = ['javascript', 'java', 'c', 'go', 'python']
-# ordenado_por_longitud = sorted(palabras, key=len)
-# print(ordenado_por_longitud)  # ['c', 'go', 'java', 'python', 'javascript']
+#len() -> longitud de la lista
+#sum() -> suma de los elementos (si son numeros)
+#max() -> mayor elemento
+#min() -> menor elemento
+
+otra_lista_numeros = [2,22,9,1,5,33,-5,0]
+otra_lista_string = ['z','h','a','l','i','m','b']
+otra_lista_string1 = ['paleta','helado','dinosaurios','manzana','torta']
+
+print("len de la lista: ", len(otra_lista_numeros))
+print("suma de la lista: ",sum(otra_lista_numeros))
+print("muestra el maximo de la lista: ",max(otra_lista_numeros))
+print("muestra el minimo de la lista: ",min(otra_lista_numeros))
+print("\n")
+print("len de la lista: ", len(otra_lista_string))
+#print("suma de la lista: ",sum(otra_lista_numeros))
+print("muestra el maximo de la lista: ",max(otra_lista_string))
+print("muestra el minimo de la lista: ",min(otra_lista_string))
+print("\n")
+print("len de la lista: ", len(otra_lista_string1))
+#print("suma de la lista: ",sum(otra_lista_numeros))
+print("muestra el maximo de la lista: ",max(otra_lista_string1))
+print("muestra el minimo de la lista: ",min(otra_lista_string1))
+
+otra_lista_string1.sort()
+print("Ordena las palabras: ", otra_lista_string1)
+
