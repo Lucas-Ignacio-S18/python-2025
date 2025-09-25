@@ -8,7 +8,6 @@
 # Todas las facturas incluyen un cargo fijo de $7000 además del costo por consumo.
 # El costo por metro cúbico (m³) de agua es de $200/m³.
 
-
 # Bonificaciones y Recargos según tipo de cliente:
 
 # Cliente Residencial:
@@ -31,7 +30,6 @@
 
 #En todos los casos, se aplica el IVA del 21% sobre el total.
 
-
 # Requerimientos del programa:
 
 # 1. Solicitar al usuario:
@@ -49,22 +47,18 @@
 # 3.Mostrar en pantalla el desglose de los cálculos.
 
 #--------------------------------------------------------------------------
-
 #1.
-
 cargo_fijo = 7000
 metros_cubicos = 200
 iva = 0.21
 
 #-------------Ingreso de datos-------------------
-
 metros_consumidos = float(input("Ingrese la cantidad de metros que posee: "))
 tipo_cliente = input("Es cliente residencial/comercial/industrial?: ")
 
 #--------------------------------------------------------------------------
 
 #2.
-
 #subtotal de consumo
 subtotal_consumo = metros_consumidos * metros_cubicos
 
