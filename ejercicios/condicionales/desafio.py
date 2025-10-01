@@ -56,8 +56,6 @@ iva = 0.21
 metros_consumidos = float(input("Ingrese la cantidad de metros que posee: "))
 tipo_cliente = input("Es cliente residencial/comercial/industrial?: ")
 
-#--------------------------------------------------------------------------
-
 #2.
 #subtotal de consumo
 subtotal_consumo = metros_consumidos * metros_cubicos
@@ -87,21 +85,15 @@ elif tipo_cliente == "industrial":
     elif metros_consumidos < 200:
         bonificacion = -(subtotal_consumo * 0.10)
 
-#CONTINUAR 
-#MODIFICAR EL "bonificacion" y cambiar por dos variables,  "bonificacion" si le descuentan y "recargo" si es que le aumenta
-#   Bonificaciones, si corresponde
-#   Recargos, si corresponde
-
 subtotal_final = subtotal_consumo + bonificacion
 
 # Casos especiales:
 if tipo_cliente == "residencial" and subtotal_final <= 35000:
     subtotal_final -= subtotal_final * 0.05
-
+    
 iva_aplicado = subtotal_final * iva
 
 total_pagar = subtotal_final + iva_aplicado
-
 
 #-----Salida----
 #3.
