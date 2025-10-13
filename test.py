@@ -35,18 +35,49 @@ diccionario[2] = "dos"
 #diccionario["nombre_pj"] = input("Ingrese su nombre: ")
 #print(Fore.LIGHTGREEN_EX + Style.BRIGHT + diccionario["nombre_pj"] + Style.RESET_ALL)
 #print(diccionario)
-
+#?------
 # print("\nDiccionario2")
 # diccionario2 = {"nombre":Fore.LIGHTCYAN_EX + input("Ingrese su nombre: " + Style.RESET_ALL),
 #                 "apellido":Fore.GREEN + input("Ingrese su apellido: ") + Style.RESET_ALL}
 
 # print(diccionario2["nombre"])
 # print(diccionario2["apellido"])
+#?------
+# personaje = {
+#     "pj1":{"nombre":input("Ingrese su nombre: "),"color":Fore.LIGHTGREEN_EX,"ataque":int(input("Ingrese su daño de ataque: "))},
+#     "pj2":{"nombre":input("Ingrese su nombre: "),"color":Fore.LIGHTGREEN_EX,"ataque":int(input("Ingrese su daño de ataque: "))}
+# }
+# for clave, pj in personaje.items():
+#     print(pj["color"] + pj["nombre"] + Style.RESET_ALL + f" tiene {pj['ataque']} de ataque")
+#     #print(pj["nombre"] + f" tiene {pj["ataque"]} de ataque")
 
-personaje = {
-    "pj1":{"nombre":input("Ingrese su nombre: "),"color":Fore.LIGHTGREEN_EX,"ataque":int(input("Ingrese su daño de ataque: "))},
-    "pj2":{"nombre":input("Ingrese su nombre: "),"color":Fore.LIGHTGREEN_EX,"ataque":int(input("Ingrese su daño de ataque: "))}
+# colores = [Fore.RED, Fore.GREEN, Fore.BLUE, Fore.CYAN, Fore.MAGENTA, Fore.YELLOW]
+# personaje = {}
+#?------
+# for i in range(3):
+#     nombre = input(f"Ingrese el nombre {i+1}: ")
+#     color = random.choice(colores)
+#     personaje[nombre] = {"nombre":nombre, "color":color, "ataque":random.randint(5,500)}
+
+# print("\n=== Lista de personajes ===")
+# for pj in personaje.values():
+#     print(pj["color"] + f"{pj["nombre"]} - Ataque: {pj["ataque"]}" + Style.RESET_ALL)
+
+#!Colores por tipo:
+colores_por_tipo ={
+    "guerrero":Fore.RED,
+    "mago":Fore.BLUE,
+    "arquero":Fore.GREEN,
+    "vanguardia":Fore.LIGHTMAGENTA_EX,
+    "sanador":Fore.CYAN
 }
-for clave, pj in personaje.items():
-    print(pj["color"] + pj["nombre"] + Style.RESET_ALL + f" tiene {pj['ataque']} de ataque")
-    #print(pj["nombre"] + f" tiene {pj["ataque"]} de ataque")
+personaje = {}
+for i in range(2):
+    nombre = input(f"Ingrese su nombre: ")
+    tipo = input(f"Ingrese su clase(vanguardia/guerrero/mago/arquero/sanador): ").lower()
+    color = colores_por_tipo.get(tipo, Fore.WHITE)
+    personaje[nombre] = {"nombre":nombre, "tipo":tipo, "color":color,"ataque":random.randint(5,500)}
+
+print("\n=== Lista de personajes ===")
+for pj in personaje.values():
+    print(pj["color"] + f"{pj["nombre"]} ({pj["tipo"]}) {Style.RESET_ALL} - Ataque: {pj["ataque"]}")
