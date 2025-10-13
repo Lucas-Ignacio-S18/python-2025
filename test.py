@@ -66,18 +66,45 @@ diccionario[2] = "dos"
 #!Colores por tipo:
 colores_por_tipo ={
     "guerrero":Fore.RED,
-    "mago":Fore.BLUE,
+    "mago":Fore.MAGENTA,
     "arquero":Fore.GREEN,
-    "vanguardia":Fore.LIGHTMAGENTA_EX,
+    "vanguardia":Fore.LIGHTRED_EX,
     "sanador":Fore.CYAN
 }
+
+#? Si el pj es lvl +50 y tiene mas de 250 de daño, que se lo catalogue como "clase superior"
+#? En caso que sea +50 pero no supere los 250 de daño entonces que sea "clase mayor"
+#? sino que sea "clase comun"
+
 personaje = {}
-for i in range(2):
-    nombre = input(f"Ingrese su nombre: ")
+for i in range(3):
+    nombre = input(f"Ingrese su nombre: ") + Style.BRIGHT
     tipo = input(f"Ingrese su clase(vanguardia/guerrero/mago/arquero/sanador): ").lower()
     color = colores_por_tipo.get(tipo, Fore.WHITE)
-    personaje[nombre] = {"nombre":nombre, "tipo":tipo, "color":color,"ataque":random.randint(5,500)}
+    ataque = random.randint(5,500)
+    nivel_num = random.randint(1,100)
 
-print("\n=== Lista de personajes ===")
+    if nivel_num > 50 and ataque > 250:
+        clase = Fore.RED + "Superior" + Style.RESET_ALL
+    elif nivel_num > 50 and ataque < 250:
+        clase = Fore.LIGHTYELLOW_EX + "Mayor" + Style.RESET_ALL
+    elif nivel_num < 50 and ataque > 250:
+        clase = Fore.LIGHTMAGENTA_EX + "Prodigio" + Style.RESET_ALL
+    else:
+        clase = Fore.WHITE + Style.DIM + "Comun" + Style.RESET_ALL
+
+# -- Cargar personajes dentro del bucle for()
+    personaje[nombre] = {
+                            "nombre":nombre, 
+                            "tipo":tipo,
+                            "color":color,
+                            "ataque":ataque, 
+                            "nivel":nivel_num,
+                            "clase":clase
+                            }
+
+print("\n===== Lista de personajes =====")
 for pj in personaje.values():
-    print(pj["color"] + f"{pj["nombre"]} ({pj["tipo"]}) {Style.RESET_ALL} - Ataque: {pj["ataque"]}")
+    #print(pj["color"] + f"{pj["nombre"]} - Clase({pj["tipo"]}) {Style.RESET_ALL} - Ataque: {pj["ataque"]}")
+    print(f"{Style.BRIGHT} {pj["nombre"]}{Style.RESET_ALL} - lvl.({pj["nivel"]}) - {Style.RESET_ALL}{pj["color"]}({pj["tipo"]}){Style.RESET_ALL} - Ataque: {pj["ataque"]} - Rango: {pj["clase"]}")
+    
