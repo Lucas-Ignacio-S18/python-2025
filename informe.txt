@@ -1,0 +1,9 @@
+INFORME FINAL DEL CURSO
+-------------------------
+Cantidad total de estudiantes: 4
+Promedio general: 5.75
+Aprobados: 2
+Desaprobados: 2
+Mejor nota: 8 (Alumno: Mateo)
+Peor nota: 2 (Alumno: Adam)
+-------------------------
