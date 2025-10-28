@@ -62,29 +62,39 @@ import random
 # ➤ El jugador tiene que adivinarlo.
 # Prácticas: random, while, condiciones.
 
-def ramdon():
-    numero_sel = int(input("Adivina el número: "))
-    numero_random = random.randint(1, 10)
+# def ramdon():
+#     numero_sel = int(input("Adivina el número: "))
+#     numero_random = random.randint(1, 10)
 
-    while numero_sel != numero_random:
-        print(Fore.RED + f"❌ El número seleccionado no es correcto❌ el correcto era {numero_random}" + Style.RESET_ALL)
-        #Reiniciamos el número aleatorio
-        numero_random = random.randint(1, 10)
-        numero_sel = int(input("Adivina el número: "))
-        continue
-    print(Fore.GREEN + f"✅ Felicitaciones! El número {numero_sel} era el correcto!✅" + Style.RESET_ALL)
-    return numero_random
-ramdon()
+#     while numero_sel != numero_random:
+#         print(Fore.RED + f"❌ El número seleccionado no es correcto❌ el correcto era {numero_random}" + Style.RESET_ALL)
+#         #Reiniciamos el número aleatorio
+#         numero_random = random.randint(1, 10)
+#         numero_sel = int(input("Adivina el número: "))
+#         continue
+#     print(Fore.GREEN + f"✅ Felicitaciones! El número {numero_sel} era el correcto!✅" + Style.RESET_ALL)
+#     return numero_random
+# ramdon()
 
 
-# Contador de vocales
-# ➤ Pedís una frase y contás cuántas vocales tiene.
+#? Contador de vocales
+#? ➤ Pedís una frase y contás cuántas vocales tiene.
 # Prácticas: cadenas, bucles, condicionales.
 
-# Conversor de temperatura
-# ➤ Convierte entre Celsius, Fahrenheit y Kelvin.
+#? Conversor de temperatura
+#? ➤ Convierte entre Celsius, Fahrenheit y Kelvin.
 # Prácticas: funciones, operadores, input.
+
 
 # Par o impar
 # ➤ Pide un número y dice si es par o impar.
 # Prácticas: operadores %, condicionales.
+
+def par_impar():
+    num = int(input("Elija un número: "))
+    if num % 2 == 0:
+        print(f"{num} es par")
+    else:
+        print(f"{num} es impar")
+    return num
+par_impar()
