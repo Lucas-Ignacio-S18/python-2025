@@ -134,17 +134,20 @@ def sublist():
     print(lista_diez[-3:])
 
 #4.Crea una copia de una lista usando [:].
-
+    lista_diez_copy = lista_diez[:]
+    print(lista_diez_copy)
 #5.Muestra la lista original y la copia para verificar que son listas diferentes.
-sublist()
-
-
-
+    print(f"Lista original: {lista_diez} | Su ID: {id(lista_diez)}")
+    print(f"Lista copy: {lista_diez_copy} | Su ID: {id(lista_diez_copy)}")
+#sublist()
 
 #?NIVEL 5 — Ejercicios con lógica
 
 #1.Pide al usuario 5 números, guárdalos en una lista y muestra el mayor y el menor.
-
+def listus():
+    
+    listanew = []
+    
 #2.Crea una lista con 10 números y muestra solo los que son múltiplos de 3.
 
 #3.Pide una palabra y guarda cada letra en una lista.
@@ -152,3 +155,4 @@ sublist()
 #4.Une una lista de palabras en una sola cadena de texto (join()).
 
 #5.Elimina los elementos repetidos de una lista (pista: set() o bucle).
+listus()
