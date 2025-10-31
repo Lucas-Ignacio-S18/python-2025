@@ -146,13 +146,38 @@ def sublist():
 #1.Pide al usuario 5 números, guárdalos en una lista y muestra el mayor y el menor.
 def listus():
     
-    listanew = []
-    
+    # listanew = []
+    # for i in range(5):
+    #     newnum = int(input(f"({i+1}).Agrega 5 números:  "))
+    #     listanew.append(newnum)
+    #     print(listanew)
+
+    # print(f"El número mayor es: {max(listanew)} y el menor es: {min(listanew)}")
+
 #2.Crea una lista con 10 números y muestra solo los que son múltiplos de 3.
+    lista_mul = [23,3,15,50,150,19,9,22,42]
+
+    for i in lista_mul:
+        if i % 3 == 0:
+            print(i)
 
 #3.Pide una palabra y guarda cada letra en una lista.
 
+    palabra = input("Ingrese una palabra: ")
+    
+    for i in palabra:
+        listan=[i]
+        print(listan)
 #4.Une una lista de palabras en una sola cadena de texto (join()).
+    lista_palabras = ["Racing","Club","Avellaneda"]
+    sep = " "
+    msj_final = sep.join(lista_palabras)
+    print(msj_final)
 
 #5.Elimina los elementos repetidos de una lista (pista: set() o bucle).
+    lista_rep = [1,2,3,4,4,5,5,5,6]
+    print(lista_rep)
+    sin_rep = set(lista_rep)
+    print(sin_rep)
+
 listus()
